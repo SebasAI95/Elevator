@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator</title>
+    <!--Bootstrap styles-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css">
+    <!--main css styles-->
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="contanier p-5">
+        <h1 class="display-4 text-center mt-4">Elevator Simulator</h1>
+        <div class='row'>
+            <div class="col-md-6 offset-md-3 my-auto">
+                <div class="card">
+
+                    <div class="card-header">
+                        <!--Current elevator level-->
+
+                        <h3 small class="text-center title">Current level is {{lvl_curr}}, what floor are you going to?</h3>
+
+                        <!--Objective elevator level-->
+                        <form action="/demand" method="POST">
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-7 mx-auto text-center">
+                                        <div class="btn-group btn-lg">
+                                            <input type="submit" name="lvl_object" value="1">
+                                            <input type="submit" name="lvl_object" value="2">
+                                            <input type="submit" name="lvl_object" value="3">
+                                            <input type="submit" name="lvl_object" value="4">
+                                            <input type="submit" name="lvl_object" value="5">
+                                            <input type="submit" name="lvl_object" value="6">
+                                            <input type="submit" name="lvl_object" value="7">
+                                            <input type="submit" name="lvl_object" value="8">
+                                            <input type="submit" name="lvl_object" value="9">
+                                            <input type="submit" name="lvl_object" value="10">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <!--Show every elevator demand-->
+                            {% for demand in demands2 %}
+                            <li class="list-group-item text-center">
+                                {{demand}}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>
