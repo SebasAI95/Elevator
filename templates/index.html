@@ -22,33 +22,18 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <!--Current elevator level-->
-
-                        <h3 small class="text-center title">Current level is {{lvl_curr}}, what floor are you going to?</h3>
-
-                        <!--Objective elevator level-->
+                        <!--INPUT demands number-->
                         <form action="/demand" method="POST">
-
                             <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-7 mx-auto text-center">
-                                        <div class="btn-group btn-lg">
-                                            <input type="submit" name="lvl_object" value="1">
-                                            <input type="submit" name="lvl_object" value="2">
-                                            <input type="submit" name="lvl_object" value="3">
-                                            <input type="submit" name="lvl_object" value="4">
-                                            <input type="submit" name="lvl_object" value="5">
-                                            <input type="submit" name="lvl_object" value="6">
-                                            <input type="submit" name="lvl_object" value="7">
-                                            <input type="submit" name="lvl_object" value="8">
-                                            <input type="submit" name="lvl_object" value="9">
-                                            <input type="submit" name="lvl_object" value="10">
-                                        </div>
-                                    </div>
-                                </div>
+                                <input type="text" name="demands_number" placeholder="Number of demands" class="form-control" autofocus>
                             </div>
-
+    
+                            <!--Generate data!-->
+                            <button type="submit" class="btn btn-primary btn-block">
+                               Generate data     
+                            </button>                            
                         </form>
+
                     </div>
 
                     <div class="card-body">
@@ -61,6 +46,8 @@
                             {% endfor %}
                         </ul>
                     </div>
+                        
+
                 </div>
             </div>
 
