@@ -5,7 +5,7 @@ from datetime import datetime
 import pandas as pd
 import random
 from time import sleep
-import pandas as pd
+
 
 #App initialization
 app = Flask(__name__)
@@ -115,7 +115,7 @@ def demand():
         lvl_rest = rest[-1].lvl_object
         
         #Create a random delay
-        sleep(random.randint(3,30))
+        sleep(random.randint(3,15))
         lvl_date = datetime.now()
         
         demand = Demands(lvl_object = lvl_object, lvl_current = lvl_current, lvl_rest = lvl_rest, lvl_date = lvl_date)
